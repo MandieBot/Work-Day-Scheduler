@@ -3,16 +3,17 @@
 // in the html.
 var currentDate = document.getElementById("currentDay");
 
+
 // currentDate = moment().format("MMM Do YY");
 
 var savedEvents = JSON.parse(localStorage.getItem(""));
 
 var saveButton1 = document.getElementById("saveOne");
 
-saveButton1.addEventListener("click", function () {});
+saveButton1.on("click", function () {});
 
-$(function init() {
-  currentDate.textContent = moment().format("MMM Do YY");
+$(function () {
+  currentDate.text = moment().format("MMM Do YY");
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
