@@ -1,12 +1,19 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
+// $(function() {}
+
 var currentDate = $("#currentDay");
 currentDate.text(moment().format("MMM Do YY"));
 
-var specificHour = 
+var specificHour = moment().format("hh");
 
 var saveButton = $(".saveBtn");
+
+$(".time-block").each(function (element) {
+  var thisHour = $(this).data("value");
+});
 
 saveButton.on("click", function () {
   var eventText = $(this).siblings("#eventText").val();
@@ -15,7 +22,6 @@ saveButton.on("click", function () {
   localStorage.setItem(div, eventText);
 });
 
-// $(function () {
 // TODO: Add a listener for click events on the save button. This code should
 // use the id in the containing time-block as a key to save the user input in
 // local storage. HINT: What does `this` reference in the click listener
@@ -34,4 +40,3 @@ saveButton.on("click", function () {
 // attribute of each time-block be used to do this?
 //
 // TODO: Add code to display the current date in the header of the page.
-// });
