@@ -4,12 +4,15 @@
 var currentDate = $("#currentDay");
 currentDate.text(moment().format("MMM Do YY"));
 
-// var savedEvents = JSON.parse(localStorage.getItem("eventText"));
+var specificHour = 
 
-var saveButton1 = $("#saveOne");
+var saveButton = $(".saveBtn");
 
-saveButton1.on("click", function () {
-  //   var eventText = this.previousSibling(getElementById("eventText"));
+saveButton.on("click", function () {
+  var eventText = $(this).siblings("#eventText").val();
+  var div = this.parentElement.id;
+  console.log(eventText);
+  localStorage.setItem(div, eventText);
 });
 
 // $(function () {
