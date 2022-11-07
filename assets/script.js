@@ -7,13 +7,25 @@
 var currentDate = $("#currentDay");
 currentDate.text(moment().format("MMM Do YY"));
 
-var specificHour = moment().format("hh");
+var specificHour = moment().hours();
 
 var saveButton = $(".saveBtn");
 
-$(".time-block").each(function (element) {
-  var thisHour = $(this).data("value");
-});
+function timeCompare() {
+  $(".time-block").each(function () {
+    var thisHour = $(this).attr("data-value");
+    console.log(typeof thisHour);
+    if (thisHour < specificHour) {
+      $(this).addClass("past");
+    }
+    if (thisHour == specificHour) {
+      $(this).addClass("present");
+    } else if (thisHour > specificHour) {
+      $(this).addClass("future");
+    }
+  });
+}
+timeCompare();
 
 saveButton.on("click", function () {
   var eventText = $(this).siblings("#eventText").val();
