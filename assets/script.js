@@ -4,7 +4,15 @@
 
 // $(function() {}
 
-$("#eventText9").text = localStorage.getItem("hour-9");
+$("#eventText9")[0].innerHTML = localStorage.getItem("hour-9");
+$("#eventText10")[0].innerHTML = localStorage.getItem("hour-10");
+$("#eventText11")[0].innerHTML = localStorage.getItem("hour-11");
+$("#eventText12")[0].innerHTML = localStorage.getItem("hour-12");
+$("#eventText13")[0].innerHTML = localStorage.getItem("hour-13");
+$("#eventText14")[0].innerHTML = localStorage.getItem("hour-14");
+$("#eventText15")[0].innerHTML = localStorage.getItem("hour-15");
+$("#eventText16")[0].innerHTML = localStorage.getItem("hour-16");
+$("#eventText17")[0].innerHTML = localStorage.getItem("hour-17");
 
 var currentDate = $("#currentDay");
 currentDate.text(moment().format("MMM Do YY"));
