@@ -4,6 +4,8 @@
 
 // $(function() {}
 
+$("#eventText9").text = localStorage.getItem("hour-9");
+
 var currentDate = $("#currentDay");
 currentDate.text(moment().format("MMM Do YY"));
 
@@ -28,7 +30,7 @@ function timeCompare() {
 timeCompare();
 
 saveButton.on("click", function () {
-  var eventText = $(this).siblings("#eventText").val();
+  var eventText = $(this).siblings(".description").val();
   var div = this.parentElement.id;
   console.log(eventText);
   localStorage.setItem(div, eventText);
