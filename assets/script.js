@@ -19,7 +19,7 @@ $(document).ready(function () {
   function timeCompare() {
     $(".time-block").each(function () {
       var thisHour = $(this).attr("data-value");
-      console.log(typeof thisHour);
+
       if (thisHour < specificHour) {
         $(this).addClass("past");
       }
